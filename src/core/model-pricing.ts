@@ -144,6 +144,9 @@ export const CANONICAL_PRICING: Record<string, ModelPricing> = {
   // per 1M. ModelPricing has no tier field, so a >272K request is
   // under-estimated by about 2x on input.
   'openai:gpt-6.1-sol':                   { input:  2.00, output: 10.00, cache_read: 0.10, cache_write: 2.50 },
+  // gpt-6.1-terra (models.dev, 2026-11-06): the fleet Terra slot (t_527a3fd3).
+  // <=272K-input rates; above 272K input the request bills 2 / 7.50 / 0.10 / 2.50.
+  'openai:gpt-6.1-terra':                 { input:  1.00, output:  5.00, cache_read: 0.05, cache_write: 1.25 },
 
   // ── Google ─────────────────────────────────────────────────────────────
   // `gemini-1.5-pro` was retired by Google (#3510); kept so historical
